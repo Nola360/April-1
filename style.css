@@ -7,6 +7,7 @@
   
 }
 
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -41,7 +42,7 @@ nav {
 
 .landing h1 {
   margin: 90px;
-  font-size: 50px;
+  font-size: 40px;
   color: rgb(168, 84, 207);
 }
 
@@ -52,6 +53,7 @@ nav {
     height: 3px;
     margin: 5px;
     background: white;
+    
   }
   
   nav {
@@ -64,6 +66,8 @@ nav {
     right: 5%;
     top: 20%;
     transform: translate(-5%, -50%);
+    z-index: 2;
+    margin-top: 20px;
   }
   
   .nav-links {
@@ -75,15 +79,40 @@ nav {
     clip-path: circle(100px at 90% 10%); /*create mask around nav link*/
     -webkit-clip-path: circle(100px at 90% -10%);
     transition: all 1s ease-out;
+    pointer-events: none;
   }
     .nav-links.open {
     clip-path: circle(1000px at 90% -10%); /*create mask around nav link*/
-    -webkit-clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1100px at 90% -10%);
+    pointer-events: all;
     
   }
   
   .landing{
     flex-direction: column;
-  } 
+  }
+  
+  .nav-links li {
+    opacity: 0;
+  }
+  
+  .nav-links li a {
+  font-size: 25px;
+}
+
+  .nav-link li:nth-child(1) {
+    transition: all 5.5s ease-in-out;
+  }
+  .nav-link li:nth-child(2) {
+    transition: all 1.5s ease-in-out;
+  }
+  .nav-link li:nth-child(3) {
+    transition: all 1.5s ease-in-out;
+  }
+  
+  li.fade {
+    opacity: 1;
+    
+  }
 
 }
